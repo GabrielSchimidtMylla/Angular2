@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { InputPropertyComponent } from "./input-property.component";
+
 @Component({
     moduleId: module.id,
     selector: 'data-binding-componente',
@@ -13,7 +15,8 @@ import { Component } from '@angular/core';
     //         }
     //     `
     // ]
-    styleUrls: ["data-binding.component.css"]
+    styleUrls: ["data-binding.component.css"],
+    directives: [ InputPropertyComponent ]
 })
 export class DataBindingComponent {
     constructor() { }
@@ -25,6 +28,7 @@ export class DataBindingComponent {
     isMouseOver :boolean = false;
     nome :string = "";
     pessoa :Object = {nome: "", idade: "18"};
+    nomeCurso: string = "Curso Angular 2";
 
     onClick(){
         alert("Botão clicado!");
