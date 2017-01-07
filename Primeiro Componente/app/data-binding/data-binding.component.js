@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var input_property_component_1 = require("./input-property.component");
+var output_property_component_1 = require("./output-property.component");
 var DataBindingComponent = (function () {
     function DataBindingComponent() {
         this.url = "http://www.curitibasoftware.com.br";
@@ -35,6 +36,9 @@ var DataBindingComponent = (function () {
     DataBindingComponent.prototype.onMouseSpan = function () {
         this.isMouseOver = !this.isMouseOver;
     };
+    DataBindingComponent.prototype.onValorAlterado = function (event) {
+        console.log(event);
+    };
     DataBindingComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -50,7 +54,7 @@ var DataBindingComponent = (function () {
             //     `
             // ]
             styleUrls: ["data-binding.component.css"],
-            directives: [input_property_component_1.InputPropertyComponent]
+            directives: [input_property_component_1.InputPropertyComponent, output_property_component_1.OutputPropertyComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], DataBindingComponent);

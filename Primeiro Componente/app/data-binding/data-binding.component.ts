@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { InputPropertyComponent } from "./input-property.component";
+import { OutputPropertyComponent} from "./output-property.component";
 
 @Component({
     moduleId: module.id,
@@ -16,7 +17,7 @@ import { InputPropertyComponent } from "./input-property.component";
     //     `
     // ]
     styleUrls: ["data-binding.component.css"],
-    directives: [ InputPropertyComponent ]
+    directives: [ InputPropertyComponent, OutputPropertyComponent ]
 })
 export class DataBindingComponent {
     constructor() { }
@@ -50,5 +51,10 @@ export class DataBindingComponent {
     onMouseSpan()
     {
         this.isMouseOver = !this.isMouseOver;
+    }
+
+    onValorAlterado(event: any)
+    {
+        console.log(event);
     }
 }

@@ -120,4 +120,8 @@
         <curso nome="Angular 2"></curso>
         <curso [nome]="nomeCurso"></curso>
     </article>
+    <article>
+        <contador valor="10"
+        (mudouValor)="onValorAlterado($event)"></contador>
+    </article>
 </section>
