@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var LifeCycleComponent = (function () {
     function LifeCycleComponent() {
+        this.valorInicial = 0;
         this.log("Constructor");
     }
     LifeCycleComponent.prototype.ngOnInit = function () {
         this.log("ngOnInit");
+        console.log(this.variavelLocalP);
     };
     LifeCycleComponent.prototype.ngOnChanges = function () {
         this.log("ngOnChanges");
@@ -40,11 +42,19 @@ var LifeCycleComponent = (function () {
     LifeCycleComponent.prototype.log = function (hooks) {
         console.log(hooks);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], LifeCycleComponent.prototype, "valorInicial", void 0);
+    __decorate([
+        core_1.ViewChild('variavelLocalP'), 
+        __metadata('design:type', HTMLElement)
+    ], LifeCycleComponent.prototype, "variavelLocalP", void 0);
     LifeCycleComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'life-cycle',
-            template: "\n        <p></p>\n    "
+            template: "\n        <p #variavelLocalP>{{ valorInicial }}</p>\n        <p>{{ variavelLocalP.textContent }}</p>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], LifeCycleComponent);

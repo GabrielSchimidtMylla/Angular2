@@ -14,8 +14,12 @@ import { LifeCycleComponent } from './ciclo/life-cycle.component';
         <meu-primeiro-componente></meu-primeiro-componente>
         <cursos-lista></cursos-lista>
         <data-binding-componente></data-binding-componente>-->
-        <life-cycle></life-cycle>
+        <life-cycle [valorInicial]="valorInicial"></life-cycle>
     `,
     directives: [ MeuPrimeiroComponent, CursosComponent, DataBindingComponent, LifeCycleComponent ]
 })
-export class AppComponent { }
+export class AppComponent { 
+
+    valorInicial: number = 15;
+
+}
