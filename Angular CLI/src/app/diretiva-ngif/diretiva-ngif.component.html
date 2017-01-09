@@ -13,6 +13,18 @@
     Não existem cursos para serem listados
 </div>
 
+<h4>NgIf por baixo dos panos</h4>
+
+<template [ngIf]="!mostrarCursos">
+    <div>
+        Não existem cursos para serem listados
+    </div>
+</template>
+ou
+<div template="ngIf !mostrarCursos">
+    Não existem cursos para serem listados    
+</div>
+
 <button type="button" (click)="onMostrarCursos()">Mostrar Cursos</button>
 
 
