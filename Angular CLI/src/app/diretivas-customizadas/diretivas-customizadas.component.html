@@ -1,0 +1,21 @@
+<p appFundoAmarelo>
+  Diretiva atributo fundo amarelo.
+</p>
+
+<p appHighlightMouse>
+  Diretiva com atributo highlight basico quando passa o mouse
+</p>
+
+<p [defaultColor]="'grey'" [appHighlight]="'purple'">
+  Diretiva com atributo highlight completo quando passa o mouse
+</p>
+
+<h5>Ng-Else - Criado do Zero altera estrutura do DOM</h5>
+<div *ngIf="mostrarCursos">
+    Lista de Cursos
+</div>
+<div *appNgElse="mostrarCursos">
+    Não existem cursos para serem listados
+</div>
+<button type="button" (click)="onMostrarCursos()">Mostrar Cursos</button>
+
