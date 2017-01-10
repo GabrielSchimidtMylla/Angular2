@@ -15,6 +15,14 @@ export class CursosComponent implements OnInit {
 
   ngOnInit() {
     this.cursos = this._cursosService.getCursos();
+
+    //Para instancias de servico diferentes utilizando o subscribe
+    //podemos ser notificados de todas as alterações que acontecerem e forem lançadas no 
+    //evento emit. Broadcast
+    CursosService.emitirCursoCriado.subscribe(
+      //Hero function: nova versão de declaração de função do ecmascript 6
+      curso => console.log(curso)
+    );
   }
 
 }
