@@ -6,4 +6,33 @@
 <p>Data Lançamento: {{ livro.dataLancamento | date:'dd/MM/yyyy'}}</p>
 <p>Url: {{ livro.url }}</p>
 
+<input type="text" #novoCurso>
+<button type="button" (click)="addCurso(novoCurso.value)" >Novo</button>
+
+<h3>Pipe Puro</h3>
 <p>Livro: {{ livro | json }}</p>
+
+<input type="text" [(ngModel)]="filtro">
+<ul>
+    <li *ngFor="let liv of livros | filtroArray: filtro">
+        {{ liv }}
+    </li>
+</ul>
+
+<h3>Pipe Puro</h3>
+<p>Livro: {{ livro | json }}</p>
+
+<input type="text" [(ngModel)]="filtro">
+<ul>
+    <li *ngFor="let liv of livros | filtroArrayImpuro: filtro">
+        {{ liv }}
+    </li>
+</ul>
+
+<h3>Maneira correta de usar filtros</h3>
+<input type="text" [(ngModel)]="filtro">
+<ul>
+    <li *ngFor="let liv of obterCursos()">
+        {{ liv }}
+    </li>
+</ul>
