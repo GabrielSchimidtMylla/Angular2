@@ -1,0 +1,23 @@
+<h3>
+  {{ titulo }}  
+</h3>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input [(ngModel)]="aluno.id" disabled id="asd" name="asd" type="text" class="validate">
+          <label for="disabled" for="asd" [class.active]="aluno.id != undefinied">#</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="nome" type="text" class="validate" name="nome" [(ngModel)]="aluno.nome">
+          <label for="nome" [class.active]="aluno.id != undefinied">Nome</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="text" class="validate" name="email" [(ngModel)]="aluno.email">
+          <label for="email" [class.active]="aluno.id != undefinied">E-mail</label>
+        </div>
+      </div>
+    </form>
+  </div>
