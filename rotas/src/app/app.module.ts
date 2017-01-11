@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { MaterializeModule } from 'angular2-materialize';
 
-import { routing } from './app.routing';
+import { AppRoutingModule } from './app.routing.module';
+import { CursosModule } from './cursos/cursos.module';
+import { AlunoModule } from './alunos/aluno.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { CursosComponent } from './cursos/cursos.component';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
-import { CursosService } from './cursos/cursos.service';
 import { Erro404Component } from './erro-404/erro-404.component';
 
 @NgModule({
@@ -19,8 +19,6 @@ import { Erro404Component } from './erro-404/erro-404.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    CursosComponent,
-    CursoDetalheComponent,
     Erro404Component
   ],
   imports: [
@@ -28,9 +26,11 @@ import { Erro404Component } from './erro-404/erro-404.component';
     FormsModule,
     HttpModule,
     MaterializeModule,
-    routing
+    AppRoutingModule,
+    CursosModule,
+    AlunoModule
   ],
-  providers: [ CursosService ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
